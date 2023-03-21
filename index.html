@@ -1,6 +1,24 @@
-<h1>Async Video Test</h1>
-<h2>Test vertical video block</h2>
-<h3>Below we should have an element that only appears on portrait pages</h3>
-<p>Portrait sucks, please turn it around</p>
-<h3>Next an element that only appears on landscape pages</h3>
-<p>Yay, Landscape is for Pros</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @media (orientation: landscape) {
+      .portrait {
+          display: none !important;
+      }
+    }
+    @media (orientation: portrait) {
+      .landscape {
+          display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Async Video Test</h1>
+  <h2>Test vertical video block</h2>
+  <h3>Below we should have an element that only appears on portrait pages</h3>
+  <p class="portrait">Portrait sucks, please turn it around</p>
+  <h3>Next an element that only appears on landscape pages</h3>
+  <p class="landscape">Yay, Landscape is for Pros</p>
+</body>
