@@ -2,14 +2,28 @@
 <html>
 <head>
   <style>
-    @media (orientation: landscape) {
-      .portrait {
+    @media (orientation: landscape) and (pointer: coarse) {
+      .mobile-portrait-warning {
+          display: none !important;
+      }
+      .recorder {
+          display: block !important;
+      }
+    }
+    @media (orientation: portrait) and (pointer: coarse) {
+      .mobile-portrait-warning {
+          display: block !important;
+      }
+      .recorder {
           display: none !important;
       }
     }
-    @media (orientation: portrait) {
-      .landscape {
+    @media (pointer: fine) {
+      .mobile-portrait-warning {
           display: none !important;
+      }
+      .recorder {
+          display: block !important;
       }
     }
   </style>
@@ -17,8 +31,8 @@
 <body>
   <h1>Async Video Test</h1>
   <h2>Test vertical video block</h2>
-  <h3>Below we should have an element that only appears on portrait pages</h3>
-  <p class="portrait">Portrait sucks, please turn it around</p>
-  <h3>Next an element that only appears on landscape pages</h3>
-  <p class="landscape">Yay, Landscape is for Pros</p>
+  <h3>Below we should have an element that only appears on mobile portrait pages</h3>
+  <p class="mobile-portrait-warning">Portrait sucks, please turn it around</p>
+  <h3>Next an element that appears on non-mobile and mobile landscape pages</h3>
+  <p class="recorder">Yay, Landscape is for Pros</p>
 </body>
